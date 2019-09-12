@@ -5,7 +5,8 @@
 #Variables
 HOSTFILE="/etc/hosts"
 
-sed -i 's/10.164.35.125 awsnode01/#/g' $HOSTFILE
+sed -i 's/10.164.35.125/#/g' $HOSTFILE
+sed -i 's/awsnode01/#/g' $HOSTFILE
 
 #Write ip nodes
 echo "#########################" >> $HOSTFILE
