@@ -1,2 +1,23 @@
 ---
-# tasks file for update-host-file
+#################################
+#Playbook of Hosts linux file update#
+#################################
+- name: Hosts file update
+  hosts: awshpcnodes
+  tasks:
+    - name: Transfer the script
+      copy: 
+        src: /../../roles/update-host-file/files/ 
+        dest: /tmp 
+        mode: 0755
+
+    - name: Execute the script
+      command: sh /tmp/add-ipnodes-hosts.sh
+   
+    - name: Ansible delete multiple file example
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - add-ipnodes-hosts.sh
+        - node-ip

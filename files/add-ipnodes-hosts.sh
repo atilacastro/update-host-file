@@ -22,3 +22,6 @@ hostnamectl set-hostname $1
 /etc/init.d/network restart
 
 cat /etc/hosts
+
+rm -rf /tmp/add-ipnodes-hosts.sh
+rm -rf /tmp/node-ip
