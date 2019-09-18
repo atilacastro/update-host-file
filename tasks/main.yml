@@ -20,4 +20,4 @@
         state: absent
       with_items:
         - add-ipnodes-hosts.sh
-        - node-ip
+        - node-ip.txt
